@@ -488,10 +488,22 @@
                         <version>2.1</version>
                     </plugin>
 		    <plugin>
-    			<groupId>org.apache.maven.plugins</groupId>
-    			<artifactId>maven-war-plugin</artifactId>
-    			<version>2.2</version>
-    		    </plugin>
+                	<groupId>org.apache.maven.plugins</groupId>
+                	<artifactId>maven-war-plugin</artifactId>
+                	<version>3.2.3</version>
+                	<executions>
+                    		<execution>
+                        		<goals>
+                            		<goal>war</goal>
+                        		</goals>
+                        	<phase>package</phase>
+                   		</execution>
+               		</executions>
+                	<configuration>
+                    		<warSourceIncludes>WEB-INF/**,META-INF/**</warSourceIncludes>
+                    		<failOnMissingWebXml>false</failOnMissingWebXml>
+                	</configuration>
+            	   </plugin>
                 </plugins>
             </reporting>
         </profile>
